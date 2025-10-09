@@ -1,9 +1,0 @@
-[2025-10-09 13:46:31,734] INFO - model training start
-[2025-10-09 13:46:31,748] INFO - Processed data read successfully
-[2025-10-09 13:46:31,748] INFO - performing train test split
-[2025-10-09 13:46:31,755] INFO - train test split successfull
-[2025-10-09 13:46:31,756] INFO - model building
-[2025-10-09 13:46:32,989] INFO - model building successfull
-[2025-10-09 13:46:32,989] INFO - model evaluation
-[2025-10-09 13:46:32,994] INFO - model evaluation successful
-[2025-10-09 13:46:32,994] INFO - model training end

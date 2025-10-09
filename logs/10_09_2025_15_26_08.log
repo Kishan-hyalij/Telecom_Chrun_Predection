@@ -1,0 +1,8 @@
+[2025-10-09 15:26:08,736] INFO - Data transformation start
+[2025-10-09 15:26:08,737] INFO - Preprocessing start
+[2025-10-09 15:26:08,783] INFO - Preprocessing successful
+[2025-10-09 15:26:08,784] INFO - saving encoders
+[2025-10-09 15:26:08,824] INFO - encoders saved
+[2025-10-09 15:26:08,824] INFO - start saving processed csv
+[2025-10-09 15:26:08,886] INFO - processed data saved
+[2025-10-09 15:26:08,887] INFO - Data transformation end

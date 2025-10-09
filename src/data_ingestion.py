@@ -15,20 +15,10 @@ except Exception as e:
             logging.info("data read failed")
             raise(e)
 
-# Setting path to save data csv 
-logging.info("path setting-up")
-try:
-    processed_data=os.path.join('data','processed')
-    os.makedirs(processed_data,exist_ok=True)
-    processed_data_path=os.path.join('data','processed',"data.csv")
-    logging.info("path set")
-except Exception as e:
-       logging.info("path failed")
-       raise(e)
-
 # Saving data csv
 try:
     logging.info("saving csv")
+    processed_data_path=os.path.join('data','processed',"data.csv")
     Data.to_csv(processed_data_path)
     logging.info("csv saved")
 except Exception as e:
