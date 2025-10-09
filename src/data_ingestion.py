@@ -18,7 +18,9 @@ except Exception as e:
 # Saving data csv
 try:
     logging.info("saving csv")
-    processed_data_path=os.path.join('data','processed',"data.csv")
+    file_path=os.path.join('data','processed')
+    os.makedirs(file_path,exist_ok= True)
+    processed_data_path=os.path.join(file_path,"data.csv")
     Data.to_csv(processed_data_path,index=False,header=True)
     logging.info("csv saved")
 except Exception as e:

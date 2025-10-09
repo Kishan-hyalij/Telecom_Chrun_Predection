@@ -28,8 +28,10 @@ try:
         encoder=LabelEncoder()
         data[i]=encoder.fit_transform(data[i])
         all_encoders.append(f'{i}{encoder}')
-
-    encoders_path=os.path.join('models',"encoders.joblib")
+    
+    file_path=os.path.join('models')
+    os.makedirs(file_path,exist_ok=True)
+    encoders_path=os.path.join(file_path,"encoders.joblib")
     joblib.dump(all_encoders,encoders_path)
     logging.info("encoders saved")
 except Exception as e:
