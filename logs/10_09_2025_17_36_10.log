@@ -1,0 +1,6 @@
+[2025-10-09 17:36:10,311] INFO - data ingestion start
+[2025-10-09 17:36:10,312] INFO - reading data
+[2025-10-09 17:36:10,369] INFO - data read successfully
+[2025-10-09 17:36:10,370] INFO - saving csv
+[2025-10-09 17:36:10,449] INFO - csv saved
+[2025-10-09 17:36:10,450] INFO - data ingestion end

@@ -11,7 +11,7 @@ logging.info("Data transformation start")
 logging.info("Preprocessing start")
 try:
     data=pd.read_csv("data/processed/data.csv")
-    data.drop(columns=['customerID'],axis=1,inplace=True)
+    data.drop('customerID',axis=1,inplace=True)
     data.replace({'TotalCharges':{' ':0}},inplace=True)
     data['TotalCharges']=data['TotalCharges'].astype('float')
     catcol=['gender','Partner','Dependents','PhoneService','MultipleLines','InternetService','OnlineSecurity','OnlineBackup','DeviceProtection','TechSupport','StreamingTV','StreamingMovies','Contract','PaperlessBilling','PaymentMethod','Churn']
@@ -40,7 +40,7 @@ except Exception as e:
 logging.info("start saving processed csv")
 try:
     processed_data_path=os.path.join('data','processed','processed_data.csv')
-    data.to_csv(processed_data_path)
+    data.to_csv(processed_data_path,index=False,header=True)
     logging.info("processed data saved")
 except Exception as e:
     logging.info("saving processed data failed")

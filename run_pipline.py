@@ -1,11 +1,12 @@
 import os
 
-requirements='pip install -r ../Telecom_Chrun_Predection/requirements.txt'
-data_ingestion='python ../Telecom_Chrun_Predection/src/data_ingestion.py'
-data_transformation='python ../Telecom_Chrun_Predection/src/data_transformation.py'
-model_training='python ../Telecom_Chrun_Predection/src/model_training.py'
+requirements='pip install -r requirements.txt'
+data_ingestion='python src/data_ingestion.py'
+data_transformation='python src/data_transformation.py'
+model_training='python src/model_training.py'
+model_prediction='python src/model_prediction.py'
     
-scripts_to_run = [requirements,data_ingestion,data_transformation,model_training]
+scripts_to_run = [requirements,data_ingestion,data_transformation,model_training,model_prediction]
 
 # Run each script sequentially
 for script in scripts_to_run:

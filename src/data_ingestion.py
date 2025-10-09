@@ -19,7 +19,7 @@ except Exception as e:
 try:
     logging.info("saving csv")
     processed_data_path=os.path.join('data','processed',"data.csv")
-    Data.to_csv(processed_data_path)
+    Data.to_csv(processed_data_path,index=False,header=True)
     logging.info("csv saved")
 except Exception as e:
         logging.info("csv not saved")
