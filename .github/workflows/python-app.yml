@@ -1,3 +1,6 @@
+# This workflow will install Python dependencies, run tests and lint with a single version of Python
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
+
 name: Python application
 
 on:
@@ -36,18 +39,16 @@ jobs:
         pytest
 
   deploy:
-
     runs-on: ubuntu-latest
-    
     needs: build
-    if: github.ref == 'refs/head/main'
+    if: github.ref == 'refs/heads/main'
 
     steps:
-    - name: chechout code
-      uses: actions/checkout@v4
+      - name: Checkout Code
+        uses: actions/checkout@v4
 
-    - name: Build the Docker image
-      run: |
-        echo "Starting Deployment"
-        # Replace this echo command with actual deployment code for example
-        # docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+      - name: Deploy to Production
+        run: |
+          echo "Starting deployment..."
+          # Replace this echo with actual deployment commands, for example:
+          # ssh user@your-server "cd /path/to/project && git pull && systemctl restart your-service"
