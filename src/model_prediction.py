@@ -19,8 +19,8 @@ try:
     pred1=Model.predict(input1)
     pred2=Model.predict(input2)
 
-    print(pred1)# 0
-    print(pred2)# 1
+    print(pred1) # 0
+    print(pred2) # 1
     logging.info("model prediction successful")
 except Exception as e:
     logging.info("prediction failed")

@@ -45,9 +45,9 @@ logging.info("model evaluation")
 try:
     y_predict=Model.predict(x_test)
     accscr=accuracy_score(y_test,y_predict)
-    file_path=os.path.join('scores')
+    file_path=os.path.join(os.getcwd(),'scores')
     os.makedirs(file_path,exist_ok=True)
-    accscr_path=os.path.join('scores','accuracy_score.txt')
+    accscr_path=os.path.join(file_path,'accuracy_score.txt')
     with open(accscr_path, 'w') as file:
         file.write(f"Model Accuracy: {accscr:.4f}\n")
     logging.info("model evaluation successful")
