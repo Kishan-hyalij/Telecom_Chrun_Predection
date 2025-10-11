@@ -43,7 +43,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Build the Docker image
-      run: 
+      run: |
         echo "Starting Deployment"
         # Replace this echo command with actual deployment code for example
         # docker build . --file Dockerfile --tag my-image-name:$(date +%s)
