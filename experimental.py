@@ -13,8 +13,11 @@ from sklearn.ensemble import StackingClassifier
 from xgboost import XGBClassifier
 from sklearn.metrics import accuracy_score
 import mlflow
+import dagshub
 
-mlflow.set_experiment("best-model-selection")
+dagshub.init(repo_owner='Kishan-hyalij', repo_name='Telecom_Chrun_Predection', mlflow=True)
+mlflow.set_tracking_uri('https://dagshub.com/Kishan-hyalij/Telecom_Chrun_Predection.mlflow')
+mlflow.set_experiment("best-model-selection1")
 
 data=pd.read_csv("data/processed/processed_data.csv")
 
@@ -25,9 +28,17 @@ x_train,x_test,y_train,y_test=train_test_split(X,Y,test_size=0.1,stratify=Y,rand
 
 with mlflow.start_run():
 
-    Model=GradientBoostingClassifier()
+    Logistic_Regression=LogisticRegression(max_iter=1000)
+    SV_Classifier=SVC()
+    KNeighbors_Classifier=KNeighborsClassifier()
+    RandomForest_Classifier=RandomForestClassifier()
+    GradientBoosting_Classifier=GradientBoostingClassifier()
+    XGB_Classifier=XGBClassifier()
+
+    Model=GradientBoosting_Classifier
+
     Model.fit(x_train,y_train)
-    #mlflow.log_artifact(Model)
+    mlflow.sklearn.log_model(Model,f'{Model}')
 
     y_predict=Model.predict(x_test)
     accscr=accuracy_score(y_test,y_predict)
