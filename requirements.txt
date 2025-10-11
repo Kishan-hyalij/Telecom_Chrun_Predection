@@ -6,4 +6,6 @@ scikit-learn
 XGBoost
 joblib
 logging
+pytest
+mlflow
 warnings

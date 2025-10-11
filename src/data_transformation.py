@@ -12,9 +12,9 @@ logging.info("Preprocessing start")
 try:
     data=pd.read_csv("data/processed/data.csv")
     data.drop('customerID',axis=1,inplace=True)
-    data.replace({'TotalCharges':{' ':0}},inplace=True)
+    data.replace({'TotalCharges':{' ':0},'Churn':{'No':0,'Yes':1}},inplace=True)
     data['TotalCharges']=data['TotalCharges'].astype('float')
-    catcol=['gender','Partner','Dependents','PhoneService','MultipleLines','InternetService','OnlineSecurity','OnlineBackup','DeviceProtection','TechSupport','StreamingTV','StreamingMovies','Contract','PaperlessBilling','PaymentMethod','Churn']
+    catcol=['gender','Partner','Dependents','PhoneService','MultipleLines','InternetService','OnlineSecurity','OnlineBackup','DeviceProtection','TechSupport','StreamingTV','StreamingMovies','Contract','PaperlessBilling','PaymentMethod']
     logging.info("Preprocessing successful")
 except Exception as e:
     logging.info("Preprocessing fail")
@@ -27,7 +27,7 @@ try:
     for i in catcol:
         encoder=LabelEncoder()
         data[i]=encoder.fit_transform(data[i])
-        all_encoders.append(f'{i}{encoder}')
+        all_encoders.append(encoder)
     
     file_path=os.path.join('models')
     os.makedirs(file_path,exist_ok=True)
